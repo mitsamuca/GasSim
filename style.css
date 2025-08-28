@@ -1,0 +1,180 @@
+/* Estilos gerais */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Painel de controles */
+.controls {
+    flex: 1;
+    min-width: 320px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.controls h1 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.control-group label span {
+    font-weight: normal;
+    color: #6c757d;
+}
+
+.control-group input[type="range"],
+.control-group input[type="number"],
+.control-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.control-group input[type="range"] { padding: 0; }
+.param-note { font-size: 0.8em; font-style: italic; color: #6c757d; margin: 5px 0 0; }
+
+/* Seções Expansíveis */
+details {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+details[open] { border-color: #0056b3; }
+summary {
+    font-weight: 600;
+    padding: 12px;
+    cursor: pointer;
+    list-style: none; /* Remove a seta padrão */
+    position: relative;
+}
+summary::-webkit-details-marker { display: none; } /* Chrome */
+summary::before {
+    content: '▶';
+    position: absolute;
+    right: 15px;
+    font-size: 0.8em;
+    transition: transform 0.2s;
+}
+details[open] summary::before { transform: rotate(90deg); }
+.details-content {
+    padding: 15px;
+    padding-top: 5px;
+    border-top: 1px solid #eee;
+}
+
+/* Display de Fórmulas */
+.calculation-display {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    font-size: 0.8em;
+    color: #495057;
+}
+.calculation-display p { margin: 5px 0; }
+.calculation-display code { font-weight: bold; color: #343a40; }
+
+
+/* Botões */
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 25px;
+}
+.buttons button {
+    padding: 12px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+#start-stop-btn { background-color: #28a745; color: white; }
+#start-stop-btn.running { background-color: #dc3545; }
+#reset-btn { background-color: #6c757d; color: white; }
+#export-btn { grid-column: 1 / -1; background-color: #17a2b8; color: white; }
+.buttons button:hover { opacity: 0.9; }
+.buttons button:active { transform: scale(0.98); }
+
+/* Área da simulação e gráfico */
+.simulation-area { flex: 3; min-width: 500px; display: flex; flex-direction: column; }
+.info-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+.info-box { text-align: center; cursor: help; }
+.info-box span { font-size: 0.9em; color: #555; }
+.info-box strong { display: block; font-size: 1.8em; color: #0056b3; }
+
+/* KPI Display */
+.kpi-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+.kpi-box {
+    flex: 1;
+    background: #e9ecef;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-align: center;
+}
+.kpi-box h3 { margin: 0 0 5px 0; font-size: 0.9em; color: #495057; font-weight: 600; }
+.kpi-box p { margin: 0; font-size: 1.5em; color: #343a40; font-weight: 700; }
+
+.chart-container { position: relative; width: 100%; flex-grow: 1; }
